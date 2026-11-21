@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مختبر المبرمج الصغير للذكاء الاصطناعي | مدرسة الشهيد تامر عبدالنبي مشعل الإعدادية المشتركة</title>
+  <meta name="description" content="المنصة التفاعلية لطلاب المرحلة الإعدادية لتعلم بناء وتصميم المواقع بالذكاء الاصطناعي.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/coder-lab.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <style>
+    .coder-lab-standalone-header {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+    [data-theme="dark"] .coder-lab-standalone-header {
+      background: rgba(15, 23, 42, 0.95);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط التنقل العلوي للمختبر -->
+  <header class="coder-lab-standalone-header">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"></div>
+        <div class="brand-text">
+          <span class="brand-title">مدرسة الشهيد تامر عبدالنبي مشعل الإعدادية المشتركة</span>
+          <span class="brand-subtitle">مختبر المبرمج الصغير للذكاء الاصطناعي </span>
+        </div>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="تبديل الوضع الداكن" title="تبديل المظهر">
+          <span id="themeIcon"></span>
+        </button>
+        <a href="index.html" class="btn btn-secondary btn-sm">العودة للموقع الرئيسي </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- قسم مختبر المبرمج الصغير التفاعلي -->
+    <section id="coder-lab" class="section coder-lab-section" style="padding-top: 2.5rem;">
+      <div class="container">
+        <div class="section-header">
+          <div class="lab-header-badge"> المنصة التفاعلية لطلاب الإعدادية</div>
+          <h2 class="section-title">مختبر <span>المبرمج الصغير</span> للذكاء الاصطناعي</h2>
+          <p class="section-desc">
+            تعلم كيف تبني وتصمم مواقع الويب الاحترافية باستخدام أوامر الذكاء الاصطناعي (Prompts)، واختبر مهاراتك في الألعاب البرمجية واجمع نقاط وشارات الإبداع!
+          </p>
+        </div>
+
+        <!-- 1. المسار التعليمي من 5 مستويات -->
+        <div class="roadmap-container">
+          <h3 style="text-align: center; margin-bottom: 2rem;">المسار التعليمي لبناء المواقع (5 خطوات نحو الإبداع)</h3>
+          <div class="roadmap-steps-wrapper">
+            <div class="roadmap-step-card active" data-step="1">
+              <div class="step-number-tag">1</div>
+              <h4 class="step-card-title">اكتب أول برومبت لموقعك</h4>
+              <p class="step-card-desc">تعلم كيف تصف فكرتك وأقسام صفحتك بلغة دقيقة ومفهومة لنماذج الذكاء الاصطناعي.</p>
+              <div class="step-status-indicator"><span>المستوى الحالي</span> </div>
+            </div>
+
+            <div class="roadmap-step-card" data-step="2">
+              <div class="step-number-tag">2</div>
+              <h4 class="step-card-title">اختيار الألوان والهيكل</h4>
+              <p class="step-card-desc">توجيه الذكاء الاصطناعي لاختيار لوحة ألوان مبهجة تناسب موضوع موقعك وترتيب العناصر.</p>
+              <div class="step-status-indicator"><span>انقر للاستكشاف</span> </div>
+            </div>
+
+            <div class="roadmap-step-card" data-step="3">
+              <div class="step-number-tag">3</div>
+              <h4 class="step-card-title">المحتوى التفاعلي والأزرار</h4>
+              <p class="step-card-desc">إضافة بطاقات جذابة وأزرار تواصل ونماذج تفاعلية تجعل زوار موقعك يستمتعون بالتصفح.</p>
+              <div class="step-status-indicator"><span>انقر للاستكشاف</span> </div>
+            </div>
+
+            <div class="roadmap-step-card" data-step="4">
+              <div class="step-number-tag">4</div>
+              <h4 class="step-card-title">فحص الكود واختبار العرض</h4>
+              <p class="step-card-desc">فهم أساسيات لغة HTML واكتشاف الأخطاء الشائعة للتأكد من أن الموقع يعمل بسلاسة.</p>
+              <div class="step-status-indicator"><span>انقر للاستكشاف</span> </div>
+            </div>
+
+            <div class="roadmap-step-card" data-step="5">
+              <div class="step-number-tag">5</div>
+              <h4 class="step-card-title">إطلاق موقعك ومشاركته بأمان</h4>
+              <p class="step-card-desc">معرفة كيفية مشاركة أعمالك مع أصدقائك ومعلميك مع الالتزام بقواعد الأمان والخصوصية.</p>
+              <div class="step-status-indicator"><span>انقر للاستكشاف</span> </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. محاكي الأوامر الذكية (Prompt Playground) -->
+        <div class="playground-box">
+          <div class="playground-top-bar">
+            <div class="playground-branding">
+              <span> Prompt Playground</span>
+              <span style="font-size: 0.8rem; color: #94A3B8; font-weight: normal;">| محاكي توليد المواقع التجريبي بالذكاء الاصطناعي</span>
+            </div>
+            <div class="playground-dots">
+              <span class="playground-dot dot-red"></span>
+              <span class="playground-dot dot-yellow"></span>
+              <span class="playground-dot dot-green"></span>
+            </div>
+          </div>
+
+          <div class="playground-main-grid">
+            <!-- عمود إدخال الأوامر والقوالب -->
+            <div class="playground-input-col">
+              <div class="templates-library-title">
+                <span> قوالب برومبتات جاهزة للاستلهام:</span>
+              </div>
+              <div class="templates-chips-wrapper">
+                <button class="template-chip-btn" data-prompt="ابنِ لي موقعاً شخصياً يعرض هوايتي في الرسم والأعمال اليدوية بألوان مبهجة وعرض للوحاتي">
+                   هوايتي المفضلة
+                </button>
+                <button class="template-chip-btn" data-prompt="موقع مدونة مدرسية أشارك فيه مقالاتي اليومية عن العلوم والرحلات المدرسية مع قسم تعليقات">
+                   مدونتي اليومية
+                </button>
+                <button class="template-chip-btn" data-prompt="صفحة تفاعلية تضم موسوعة ومعلومات شيقة عن الحيوانات الأليفة وكيفية العناية بها مع صور">
+                   موسوعة الحيوانات
+                </button>
+                <button class="template-chip-btn" data-prompt="موقع رسمي لنادي الروبوت والابتكار المدرسي يعرض اختراعاتنا وأهداف الفريق وأزرار انضمام">
+                   نادي الروبوت
+                </button>
+              </div>
+
+              <label for="promptTextarea" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: block;">
+                اكتب وصف موقعك هنا (Prompt):
+              </label>
+              <div class="prompt-textarea-wrap">
+                <textarea id="promptTextarea" class="prompt-textarea" placeholder="مثال: ابنِ لي موقعاً عن نادي العلوم بالمدرسة، يعرض التجارب العلمية بألوان خضراء وأزرار زرقاء تفاعلية..."></textarea>
+              </div>
+
+              <div class="playground-options-row">
+                <div class="option-group">
+                  <label for="siteStyleSelect">نمط التصميم (Theme):</label>
+                  <select id="siteStyleSelect" class="option-select">
+                    <option value="modern">حديث وعصري </option>
+                    <option value="playful">مرح وملون </option>
+                    <option value="tech">تقني ومستقبلي </option>
+                    <option value="nature">طبيعي وهادئ </option>
+                  </select>
+                </div>
+
+                <div class="option-group">
+                  <label for="audienceSelect">الجمهور المستهدف:</label>
+                  <select id="audienceSelect" class="option-select">
+                    <option value="friends">أصدقائي وزملائي </option>
+                    <option value="teachers">المعلمون وإدارة المدرسة </option>
+                    <option value="all">عام لجميع الزوار </option>
+                  </select>
+                </div>
+              </div>
+
+              <button id="generateSiteBtn" class="generate-site-btn">
+                <span>ولّد الموقع بالذكاء الاصطناعي </span>
+              </button>
+            </div>
+
+            <!-- عمود المعاينة التفاعلية والشاشة المحاكية -->
+            <div class="playground-preview-col">
+              <div class="preview-controls-bar">
+                <div class="device-switcher">
+                  <button class="device-switch-btn active" data-device="desktop">
+                    <span>️</span> حاسوب
+                  </button>
+                  <button class="device-switch-btn" data-device="mobile">
+                    <span></span> هاتف
+                  </button>
+                </div>
+
+                <div class="preview-tab-switcher">
+                  <button class="preview-tab-btn active" data-tab="preview">معاينة حية ️</button>
+                  <button class="preview-tab-btn" data-tab="code">كود HTML </button>
+                </div>
+
+                <div class="preview-actions-group">
+                  <button id="copyCodeBtn" class="btn-preview-action" title="نسخ كود HTML"> نسخ الكود</button>
+                  <button id="downloadCodeBtn" class="btn-preview-action btn-download" title="تحميل ملف HTML"> تحميل الموقع</button>
+                </div>
+              </div>
+
+              <div id="simulatedViewportFrame" class="simulated-viewport-frame">
+                <div id="simulatedSiteOutput" class="simulated-site-output">
+                  <!-- محتوى الموقع المولد ديناميكياً يظهر هنا -->
+                </div>
+                <pre id="codeInspectorView" class="code-inspector-view"></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. الألعاب التعليمية المصغرة (Mini-Games Suite) -->
+        <h3 style="text-align: center; margin-bottom: 2rem;">الألعاب البرمجية المصغرة (العب واجمع النقاط )</h3>
+        <div class="games-suite-grid">
+          <!-- لعبة 1: رتّب وسوم HTML -->
+          <div class="game-container-card">
+            <span class="game-badge">لعبة 1: الهيكل البنائي</span>
+            <h4 class="game-title">رتّب وسوم HTML </h4>
+            <p class="game-desc">انقر على الوسوم بالترتيب المعماري الصحيح لبناء صفحة ويب قياسية سليمة:</p>
+
+            <div class="html-puzzle-box">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #64748B; margin-bottom: 0.5rem;">انقر على الوسم لإضافته:</div>
+              <div id="tagsPool" class="draggable-tags-pool">
+                <span class="puzzle-tag-chip" data-tag="<body>">&lt;body&gt;</span>
+                <span class="puzzle-tag-chip" data-tag="<!DOCTYPE html>">&lt;!DOCTYPE html&gt;</span>
+                <span class="puzzle-tag-chip" data-tag="<footer>">&lt;footer&gt;</span>
+                <span class="puzzle-tag-chip" data-tag="<html>">&lt;html&gt;</span>
+                <span class="puzzle-tag-chip" data-tag="<h1>">&lt;h1&gt;</span>
+                <span class="puzzle-tag-chip" data-tag="<head>">&lt;head&gt;</span>
+              </div>
+
+              <div style="font-size: 0.8rem; font-weight: 700; color: #64748B; margin-bottom: 0.5rem;">ترتيبك الحالي:</div>
+              <div id="slotsContainer" class="puzzle-slots-container">
+                <div style="color: #94A3B8; font-size: 0.85rem; text-align: center; padding-top: 2rem;">انقر على الوسوم أعلاه لترتيبها هنا بالترتيب الصحيح</div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+              <button id="checkPuzzleBtn" class="btn btn-coder btn-sm" style="flex: 1;">تحقق من الترتيب </button>
+              <button id="resetPuzzleBtn" class="btn btn-secondary btn-sm">إعادة </button>
+            </div>
+            <div id="puzzleFeedback" class="game-feedback-msg"></div>
+          </div>
+
+          <!-- لعبة 2: إيه الخطأ؟ (Spot the Bug) -->
+          <div class="game-container-card">
+            <span class="game-badge" style="background: #FEE2E2; color: #DC2626;">لعبة 2: صياد الأخطاء</span>
+            <h4 class="game-title">إيه الخطأ في الكود؟ </h4>
+            <p class="game-desc">دقق في سطر الكود التالي واكتشف المشكلة التي تمنع ظهور العنصر بشكل صحيح:</p>
+
+            <div class="bug-code-display">
+              &lt;div class="student-card"&gt;<br>
+              &nbsp;&nbsp;&lt;h3&gt;مرحبا بكم&lt;/h3&gt;<br>
+              &nbsp;&nbsp;<span class="bugged-line">&lt;img src="pic.jpg" alt="صورتي"&gt;&lt;/img&gt;</span><br>
+              &lt;/div&gt;
+            </div>
+
+            <div class="bug-options-list">
+              <label class="bug-option-label" data-correct="false">
+                <input type="radio" name="bugRadio">
+                <span>اسم الكلاس class غير مسموح به في HTML</span>
+              </label>
+              <label class="bug-option-label" data-correct="true">
+                <input type="radio" name="bugRadio">
+                <span>وسم &lt;img&gt; وسم ذاتي الإغلاق ولا يحتاج لـ &lt;/img&gt;</span>
+              </label>
+              <label class="bug-option-label" data-correct="false">
+                <input type="radio" name="bugRadio">
+                <span>خاصية alt ممنوعة مع الصور داخل div</span>
+              </label>
+            </div>
+
+            <div id="bugFeedback" class="game-feedback-msg"></div>
+          </div>
+
+          <!-- لعبة 3: اكتب برومبت أحسن -->
+          <div class="game-container-card">
+            <span class="game-badge" style="background: #FEF3C7; color: #D97706;">لعبة 3: هندسة الأوامر</span>
+            <h4 class="game-title">أي البرومبتين أفضل للذكاء الاصطناعي؟ </h4>
+            <p class="game-desc">تحدي المقارنة: اختر الأمر الذي سيعطي الذكاء الاصطناعي أفضل نتيجة لبناء الموقع:</p>
+
+            <div class="prompt-quiz-cards">
+              <div class="prompt-compare-card" data-best="false">
+                <strong>الخيار (أ):</strong><br>
+                "اعملي صفحة ويب حلوة وممتازة عن أصحابي ومدرستي بسرعة."
+              </div>
+
+              <div class="prompt-compare-card" data-best="true">
+                <strong>الخيار (ب):</strong><br>
+                "ابنِ لي صفحة ويب شخصية بعنوان 'أصدقاء الصف'، تضم بطاقات متجاوبة لكل طالب، وخلفية باللون الكحلي، وزر إرسال رسالة ترحيبية."
+              </div>
+            </div>
+
+            <div id="promptQuizFeedback" class="game-feedback-msg"></div>
+          </div>
+        </div>
+
+        <!-- 4. لوحة النقاط، الشارات، والتحدي الأسبوعي -->
+        <div class="gamification-dashboard">
+          <div class="dashboard-top">
+            <div class="user-xp-box">
+              <div class="xp-circle">
+                <span id="userXpVal" class="xp-val">150</span>
+                <span class="xp-unit">XP</span>
+              </div>
+              <div>
+                <h3 id="userLevelTitle" style="margin-bottom: 0.2rem; font-size: 1.25rem;">المستوى 1: مبتدئ شغوف </h3>
+                <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">تقدّمك نحو المستوى التالي ومكافآت التحديات</p>
+                <div class="xp-progress-wrap">
+                  <div class="xp-bar-bg">
+                    <div id="xpBarFill" class="xp-bar-fill"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+              <button id="printCertBtn" class="btn btn-coder btn-sm" style="box-shadow: none;"> شهادة الإنجاز</button>
+              <div>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">حفظ تقدمك محلياً:</span>
+                <span style="font-weight: 700; color: var(--color-growth); margin-right: 0.5rem;">محفوظ تلقائياً </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- بانر التحدي الأسبوعي -->
+          <div class="weekly-challenge-banner">
+            <div>
+              <span class="challenge-tag">تحدي هذا الأسبوع </span>
+              <h4 style="color: #ffffff; margin-bottom: 0.4rem; font-size: 1.15rem;">تحدي الأسبوع: صمّم صفحة لناديك الرياضي المفضل</h4>
+              <p style="color: #CBD5E1; margin: 0; font-size: 0.9rem;">
+                اكتب برومبت مفصل في الـ Playground يصف نادي كرة القدم أو الجمباز، واستعرض الكود لتحصل على +100 نقطة إضافية!
+              </p>
+            </div>
+            <a href="#promptTextarea" class="btn btn-accent btn-sm" style="white-space: nowrap;">ابدأ التحدي الآن</a>
+          </div>
+
+          <!-- شبكة الشارات المفتوحة -->
+          <h4 style="margin-bottom: 1.25rem;">شارات الإنجاز الرقمية:</h4>
+          <div class="badges-grid">
+            <div class="badge-item-card unlocked" data-badge="badge_beginner">
+              <div class="badge-icon-display"></div>
+              <h5 class="badge-item-title">مبتدئ البرمجة</h5>
+              <p class="badge-item-desc">الانضمام لمختبر المبرمج الصغير واستكشاف المسار</p>
+              <div class="badge-status" style="color: var(--color-growth); font-size: 0.75rem; font-weight: bold; margin-top: 0.5rem;">مفتوحة </div>
+            </div>
+
+            <div class="badge-item-card locked" data-badge="badge_prompt">
+              <div class="badge-icon-display">‍️</div>
+              <h5 class="badge-item-title">مهندس الأوامر</h5>
+              <p class="badge-item-desc">توليد أول موقع بنجاح في الـ Prompt Playground</p>
+              <div class="badge-status" style="color: #94A3B8; font-size: 0.75rem; font-weight: bold; margin-top: 0.5rem;">مغلقة </div>
+            </div>
+
+            <div class="badge-item-card locked" data-badge="badge_debugger">
+              <div class="badge-icon-display"></div>
+              <h5 class="badge-item-title">صياد الأخطاء</h5>
+              <p class="badge-item-desc">إتقان ألعاب الترتيب واكتشاف الثغرات البرمجية</p>
+              <div class="badge-status" style="color: #94A3B8; font-size: 0.75rem; font-weight: bold; margin-top: 0.5rem;">مغلقة </div>
+            </div>
+
+            <div class="badge-item-card locked" data-badge="badge_creator">
+              <div class="badge-icon-display"></div>
+              <h5 class="badge-item-title">المبدع الذهبي</h5>
+              <p class="badge-item-desc">جمع أكثر من 400 نقطة خبرة XP وإكمال التحديات</p>
+              <div class="badge-status" style="color: #94A3B8; font-size: 0.75rem; font-weight: bold; margin-top: 0.5rem;">مغلقة </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. معرض مواقع الطلاب الملهم -->
+        <div class="student-showcase-section">
+          <h3 style="text-align: center; margin-bottom: 2rem;">معرض مواقع الطلاب الملهمة (من إبداعات زملائك )</h3>
+          <div class="student-showcase-grid">
+            <div class="student-site-card">
+              <div class="student-site-preview-thumb"></div>
+              <div class="student-site-body">
+                <div class="student-creator">
+                  <span>الطالبة: سارة أيمن (الصف الثاني الإعدادي)</span>
+                </div>
+                <h4 style="margin-bottom: 0.5rem;">معرض الفنون التشكيلية</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                  موقع شخصي يعرض لوحات سارة الزيتية مع وصف تفاعلي لكل عمل وقسم تواصل.
+                </p>
+                <button class="btn btn-secondary btn-sm btn-view-demo" style="width: 100%;">استعراض المشروع ️</button>
+              </div>
+            </div>
+
+            <div class="student-site-card">
+              <div class="student-site-preview-thumb" style="background: linear-gradient(135deg, #065F46, #047857);"></div>
+              <div class="student-site-body">
+                <div class="student-creator">
+                  <span>الطالب: يوسف خالد (الصف الأول الإعدادي)</span>
+                </div>
+                <h4 style="margin-bottom: 0.5rem;">دليل استكشاف الفضاء</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                  موسوعة تفاعلية مبسطة حول كواكب المجموعة الشمسية ومحطة الفضاء الدولية.
+                </p>
+                <button class="btn btn-secondary btn-sm btn-view-demo" style="width: 100%;">استعراض المشروع ️</button>
+              </div>
+            </div>
+
+            <div class="student-site-card">
+              <div class="student-site-preview-thumb" style="background: linear-gradient(135deg, #1E1B4B, #312E81);"></div>
+              <div class="student-site-body">
+                <div class="student-creator">
+                  <span>الطالب: عمر هشام (الصف الثالث الإعدادي)</span>
+                </div>
+                <h4 style="margin-bottom: 0.5rem;">موقع نادي الروبوت المدرسي</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                  صفحة رسمية لفريق الروبوت تعرض البطولات السابقة وشرح المكونات الإلكترونية.
+                </p>
+                <button class="btn btn-secondary btn-sm btn-view-demo" style="width: 100%;">استعراض المشروع ️</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. ركن الذكاء الاصطناعي بأمان -->
+        <div class="ai-safety-box">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span style="font-size: 1.75rem;">️</span>
+            <h3 style="margin: 0; color: var(--color-growth);">الذكاء الاصطناعي بأمان: ميثاق المبرمج الصغير</h3>
+          </div>
+          <p style="color: var(--text-muted); margin: 0; font-size: 0.95rem;">
+            الذكاء الاصطناعي أداة رائعة تضاعف إبداعك، ولكن استخدامها بمسؤولية هو سر نجاحك وتفوقك. إليك أهم 3 قواعد ذهبية:
+          </p>
+
+          <div class="safety-rules-grid">
+            <div class="safety-rule-card">
+              <div class="safety-rule-icon"></div>
+              <h4 style="margin-bottom: 0.35rem; font-size: 1rem;">احمِ بياناتك وخصوصيتك</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                لا تشارك أبداً كلمات مرورك، عنوان منزلك، رقم هاتفك الشخصي، أو أي معلومات حساسة مع أدوات الذكاء الاصطناعي أو المواقع العامة.
+              </p>
+            </div>
+
+            <div class="safety-rule-card">
+              <div class="safety-rule-icon"></div>
+              <h4 style="margin-bottom: 0.35rem; font-size: 1rem;">تحقق وفكّر بنفسك</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                قد يقدم الذكاء الاصطناعي معلومات غير دقيقة أحياناً؛ استخدم عقلك دائماً وراجع الكتب المدرسية ومصادر المعلمين الموثوقة للتأكد.
+              </p>
+            </div>
+
+            <div class="safety-rule-card">
+              <div class="safety-rule-icon">️</div>
+              <h4 style="margin-bottom: 0.35rem; font-size: 1rem;">احترم إبداع وحقوق الآخرين</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
+                استخدم الذكاء الاصطناعي كمساعد ملهم لأفكارك الخاصة، ولا تنسب أعمال ورسومات الآخرين لنفسك دون إذن أو ذكر المصدر.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- نافذة شهادة المبرمج الصغير التفاعلية للطباعة والتكريم -->
+    <div id="certModal" class="cert-modal" role="dialog" aria-modal="true" aria-label="شهادة المبرمج الصغير">
+      <div class="cert-dialog">
+        <button id="certCloseBtn" class="cert-close-btn" aria-label="إغلاق">&times;</button>
+        <div class="cert-seal"></div>
+        <div style="font-size: 0.95rem; font-weight: 700; color: #D97706; margin-bottom: 0.25rem;">مدرسة الشهيد تامر عبدالنبي مشعل الإعدادية المشتركة | مختبر الذكاء الاصطناعي</div>
+        <h2 class="cert-title">شهادة تفوق وإنجاز رقمي</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+          تشهد إدارة المدرسة بأن الطالب المبدع:
+        </p>
+
+        <input type="text" id="certStudentName" class="cert-student-input" value="البطل المبرمج" title="انقر لتعديل اسمك للطباعة">
+
+        <p style="line-height: 1.8; font-size: 1rem; color: #334155; max-width: 500px; margin: 1.5rem auto;">
+          قد أتم بنجاح مستويات <strong>مسار بناء المواقع بالذكاء الاصطناعي</strong>، واجتاز تحديات الأكواد وحصل على شارات الإبداع بمختبر المبرمج الصغير بكل تميز وأمانة رقمية.
+        </p>
+
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 2rem; border-top: 1px dashed #CBD5E1; padding-top: 1.25rem;">
+          <div style="text-align: center;">
+            <div style="font-weight: 800; font-size: 0.9rem;">مشرف المختبر</div>
+            <div style="font-family: var(--font-heading); color: #4F46E5; margin-top: 0.2rem;">م. زياد محمود ️</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2rem;"></div>
+            <span style="font-size: 0.75rem; color: #64748B;">ختم الجودة المدرسية</span>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-weight: 800; font-size: 0.9rem;">مديرة المدرسة</div>
+            <div style="font-family: var(--font-heading); color: var(--color-primary); margin-top: 0.2rem;">أ. منى السيد ️</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 0.75rem; justify-content: center;">
+          <button id="doPrintCertBtn" class="btn btn-primary btn-sm">️ طباعة الشهادة أو حفظها كـ PDF</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- السكربتات -->
+  <script src="js/main.js"></script>
+  <script src="js/coder-lab.js"></script>
+</body>
+</html>
+

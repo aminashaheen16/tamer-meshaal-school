@@ -1,0 +1,990 @@
+/* ==========================================================================
+   موقع المدرسة - قسم مختبر المبرمج الصغير (Little Coder Lab Styles)
+   مسار تعليمي، محاكي الأوامر، قوالب جاهزة، ألعاب مصغرة، ونظام الشارات
+   ========================================================================== */
+
+.coder-lab-section {
+  background: radial-gradient(circle at 10% 10%, rgba(79, 70, 229, 0.04) 0%, transparent 40%),
+              radial-gradient(circle at 90% 90%, rgba(139, 30, 63, 0.04) 0%, transparent 40%),
+              var(--bg-page);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.lab-header-badge {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  color: #ffffff;
+  padding: 0.4rem 1.25rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   1. المسار التعليمي (5-Level Learning Roadmap)
+   -------------------------------------------------------------------------- */
+.roadmap-container {
+  margin: 2.5rem 0 4rem 0;
+  position: relative;
+}
+
+.roadmap-steps-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  position: relative;
+}
+
+.roadmap-step-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.roadmap-step-card:hover {
+  transform: translateY(-6px);
+  border-color: #4F46E5;
+  box-shadow: var(--shadow-lg);
+}
+
+.roadmap-step-card.active {
+  border-color: #4F46E5;
+  background: linear-gradient(to bottom, rgba(79, 70, 229, 0.04), var(--bg-surface));
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.15);
+}
+
+.roadmap-step-card.completed {
+  border-color: var(--color-growth);
+}
+
+.step-number-tag {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #EEF2FF;
+  color: #4F46E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.roadmap-step-card.active .step-number-tag {
+  background: #4F46E5;
+  color: #ffffff;
+}
+
+.roadmap-step-card.completed .step-number-tag {
+  background: var(--color-growth);
+  color: #ffffff;
+}
+
+.step-card-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.step-card-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.step-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4F46E5;
+}
+
+.roadmap-step-card.completed .step-status-indicator {
+  color: var(--color-growth);
+}
+
+@media (max-width: 992px) {
+  .roadmap-steps-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .roadmap-steps-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. محاكي الأوامر الذكية (Prompt Playground)
+   -------------------------------------------------------------------------- */
+.playground-box {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.playground-top-bar {
+  background: #1E293B;
+  color: #ffffff;
+  padding: 1rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playground-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.playground-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.playground-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #EF4444; }
+.dot-yellow { background: #F59E0B; }
+.dot-green { background: #10B981; }
+
+.playground-main-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.35fr;
+  min-height: 580px;
+}
+
+/* عمود إدخال الأوامر والقوالب */
+.playground-input-col {
+  padding: 2rem;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.templates-library-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.templates-chips-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.template-chip-btn {
+  background: var(--bg-surface-alt);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.template-chip-btn:hover {
+  background: #EEF2FF;
+  color: #4F46E5;
+  border-color: #C7D2FE;
+  transform: translateY(-2px);
+}
+
+.prompt-textarea-wrap {
+  position: relative;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.prompt-textarea {
+  width: 100%;
+  height: 160px;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+  transition: all var(--transition-fast);
+}
+
+.prompt-textarea:focus {
+  outline: none;
+  border-color: #4F46E5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.playground-options-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.option-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.option-select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.generate-site-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.generate-site-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(99, 102, 241, 0.45);
+}
+
+/* عمود المعاينة التفاعلية والشاشة المحاكية */
+.playground-preview-col {
+  padding: 2rem;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.device-switcher {
+  display: flex;
+  background: #E2E8F0;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  gap: 3px;
+}
+
+.device-switch-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.device-switch-btn.active {
+  background: #ffffff;
+  color: #0F172A;
+  box-shadow: var(--shadow-sm);
+}
+
+.preview-tab-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.preview-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-preview-action {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.825rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-preview-action:hover {
+  background: #EEF2FF;
+  color: #4F46E5;
+  border-color: #C7D2FE;
+}
+
+.btn-preview-action.btn-download {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-preview-action.btn-download:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* نافذة شهادة المبرمج الصغير التفاعلية */
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.cert-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cert-dialog {
+  background: #ffffff;
+  border: 8px double #D97706;
+  border-radius: 16px;
+  max-width: 650px;
+  width: 100%;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: #1E293B;
+  animation: zoomInCert 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes zoomInCert {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cert-close-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 1.5rem;
+  color: #64748B;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.cert-seal {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-title {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-student-input {
+  border: none;
+  border-bottom: 2px dashed #D97706;
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-align: center;
+  color: #4F46E5;
+  width: 80%;
+  padding: 0.25rem;
+  margin: 1rem auto;
+  outline: none;
+  background: transparent;
+}
+
+.preview-tab-btn {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.preview-tab-btn.active {
+  background: #4F46E5;
+  color: #ffffff;
+}
+
+/* إطار الجهاز المحاكي */
+.simulated-viewport-frame {
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.simulated-viewport-frame.mobile-mode {
+  max-width: 340px;
+  width: 100%;
+  margin: 0 auto;
+  border: 8px solid #1E293B;
+  border-radius: 28px;
+}
+
+.simulated-site-output {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.code-inspector-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  background: #0F172A;
+  color: #38BDF8;
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  overflow-y: auto;
+  direction: ltr;
+  text-align: left;
+}
+
+.code-inspector-view.active {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .playground-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .playground-input-col {
+    border-left: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem;
+  }
+  .playground-preview-col {
+    padding: 1.25rem;
+  }
+  .playground-options-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. الألعاب التعليمية المصغرة (Mini-Games Suite)
+   -------------------------------------------------------------------------- */
+.games-suite-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.game-container-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: #EEF2FF;
+  color: #4F46E5;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.game-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* لعبة ترتيب وسوم HTML */
+.html-puzzle-box {
+  background: var(--bg-surface-alt);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.draggable-tags-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.puzzle-tag-chip {
+  padding: 0.5rem 0.9rem;
+  background: #ffffff;
+  border: 2px dashed #94A3B8;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4F46E5;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.puzzle-tag-chip:hover {
+  border-color: #4F46E5;
+  background: #EEF2FF;
+}
+
+.puzzle-slots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 2px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  background: #ffffff;
+  min-height: 160px;
+}
+
+.puzzle-slot-item {
+  background: #EEF2FF;
+  border: 1px solid #C7D2FE;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slot-remove-btn {
+  color: #EF4444;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* لعبة إيه الخطأ */
+.bug-code-display {
+  background: #0F172A;
+  color: #E2E8F0;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  direction: ltr;
+  text-align: left;
+  margin-bottom: 1.25rem;
+  border-right: 4px solid #EF4444;
+}
+
+.bug-code-display span.bugged-line {
+  background: rgba(239, 68, 68, 0.25);
+  display: block;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+.bug-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.bug-option-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface-alt);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.bug-option-label:hover {
+  background: #EEF2FF;
+  border-color: #4F46E5;
+}
+
+/* لعبة اكتب برومبت أحسن */
+.prompt-quiz-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.prompt-compare-card {
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border-color);
+  background: var(--bg-surface-alt);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all var(--transition-fast);
+}
+
+.prompt-compare-card:hover {
+  border-color: #4F46E5;
+  background: #EEF2FF;
+}
+
+.game-feedback-msg {
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  display: none;
+  text-align: center;
+}
+
+.game-feedback-msg.success {
+  display: block;
+  background: #DEF7EC;
+  color: #03543F;
+}
+
+.game-feedback-msg.error {
+  display: block;
+  background: #FDE8E8;
+  color: #9B1C1C;
+}
+
+@media (max-width: 992px) {
+  .games-suite-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. نظام النقاط، الشارات، والتحدي الأسبوعي (Gamification)
+   -------------------------------------------------------------------------- */
+.gamification-dashboard {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 4rem;
+}
+
+.dashboard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.user-xp-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.xp-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.xp-circle .xp-val { font-size: 1.25rem; line-height: 1; }
+.xp-circle .xp-unit { font-size: 0.75rem; }
+
+.xp-progress-wrap {
+  width: 100%;
+  max-width: 240px;
+}
+
+.xp-bar-bg {
+  height: 10px;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 0.4rem;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  width: 45%;
+  background: linear-gradient(to left, #4F46E5, #7C3AED);
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+.weekly-challenge-banner {
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.challenge-tag {
+  background: #F59E0B;
+  color: #0F172A;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.badge-item-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface-alt);
+  transition: all var(--transition-fast);
+}
+
+.badge-item-card.unlocked {
+  background: #ffffff;
+  border-color: #F59E0B;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
+}
+
+.badge-item-card.locked {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+
+.badge-icon-display {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge-item-title {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.badge-item-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .badges-grid { grid-template-columns: repeat(2, 1fr); }
+  .weekly-challenge-banner { flex-direction: column; text-align: center; }
+}
+
+/* --------------------------------------------------------------------------
+   5. معرض مواقع الطلاب (Student Showcase)
+   -------------------------------------------------------------------------- */
+.student-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.student-site-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.student-site-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.student-site-preview-thumb {
+  height: 180px;
+  background: linear-gradient(135deg, #1E293B, #334155);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 3rem;
+  position: relative;
+}
+
+.student-site-body {
+  padding: 1.5rem;
+}
+
+.student-creator {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  .student-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .student-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. قسم "الذكاء الاصطناعي بأمان" (AI Safety for Kids)
+   -------------------------------------------------------------------------- */
+.ai-safety-box {
+  background: linear-gradient(135deg, rgba(46, 125, 94, 0.08), rgba(79, 70, 229, 0.08));
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid rgba(46, 125, 94, 0.2);
+}
+
+.safety-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.safety-rule-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.safety-rule-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .safety-rules-grid { grid-template-columns: 1fr; }
+}
+

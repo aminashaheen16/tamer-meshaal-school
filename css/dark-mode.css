@@ -1,0 +1,346 @@
+/* ==========================================================================
+   موقع المدرسة - تخصيصات الوضع الداكن الشامل (Full Dark Mode)
+   تبديل سلس لجميع مكونات الموقع لتوفير تباين عالٍ وراحة للعين
+   ========================================================================== */
+
+[data-theme="dark"], body.dark-mode {
+  --bg-page: #0B1120;
+  --bg-surface: #1E293B;
+  --bg-surface-alt: #162032;
+  --bg-overlay: rgba(3, 7, 18, 0.85);
+
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-light: #64748B;
+  --border-color: #334155;
+
+  --color-primary-subtle: rgba(139, 30, 63, 0.25);
+  --color-accent-subtle: rgba(217, 130, 43, 0.25);
+  --color-growth-light: rgba(46, 125, 94, 0.25);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 35px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* تعديل الهيدر في الوضع الداكن */
+[data-theme="dark"] .site-header {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background-color: rgba(15, 23, 42, 0.98);
+}
+
+[data-theme="dark"] .nav-link {
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: #F472B6;
+}
+
+[data-theme="dark"] .theme-toggle-btn,
+[data-theme="dark"] .mobile-menu-btn {
+  background-color: #1E293B;
+  border-color: #334155;
+  color: #FBBF24;
+}
+
+/* القائمة المتجاوبة */
+[data-theme="dark"] .mobile-drawer {
+  background-color: #0F172A;
+  border-left: 1px solid #334155;
+}
+
+[data-theme="dark"] .drawer-header {
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .drawer-close-btn {
+  background-color: #1E293B;
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .drawer-link {
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .drawer-link:hover,
+[data-theme="dark"] .drawer-link.active {
+  background-color: rgba(139, 30, 63, 0.3);
+  color: #F472B6;
+}
+
+/* بطاقات الإحصائيات */
+[data-theme="dark"] .stats-card-wrapper {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .stat-item:not(:last-child)::after {
+  background-color: #334155;
+}
+
+[data-theme="dark"] .stat-number-wrapper {
+  color: #F472B6;
+}
+
+/* البطاقات والمكونات العامة */
+[data-theme="dark"] .value-card,
+[data-theme="dark"] .stage-card,
+[data-theme="dark"] .facility-card,
+[data-theme="dark"] .faculty-card,
+[data-theme="dark"] .events-calendar-box,
+[data-theme="dark"] .news-list-box,
+[data-theme="dark"] .achievement-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .contact-info-card,
+[data-theme="dark"] .contact-form-box,
+[data-theme="dark"] .about-floating-badge {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .event-item {
+  background-color: #162032;
+}
+
+[data-theme="dark"] .box-heading,
+[data-theme="dark"] .news-card-item {
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .form-control:focus {
+  border-color: #F472B6;
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.2);
+  background-color: #162032;
+}
+
+/* الأكورديون في الوضع الداكن */
+[data-theme="dark"] .faq-item {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .faq-toggle-icon {
+  background-color: #0F172A;
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .faq-body-inner {
+  border-top-color: #334155;
+}
+
+/* قسم مختبر المبرمج الصغير في الوضع الداكن */
+[data-theme="dark"] .coder-lab-section {
+  background: radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 90% 90%, rgba(244, 114, 182, 0.08) 0%, transparent 40%),
+              #0B1120;
+}
+
+[data-theme="dark"] .roadmap-step-card,
+[data-theme="dark"] .game-container-card,
+[data-theme="dark"] .gamification-dashboard,
+[data-theme="dark"] .student-site-card,
+[data-theme="dark"] .safety-rule-card {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .step-number-tag {
+  background-color: #312E81;
+  color: #A5B4FC;
+}
+
+[data-theme="dark"] .template-chip-btn {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #E2E8F0;
+}
+
+[data-theme="dark"] .template-chip-btn:hover {
+  background-color: #312E81;
+  color: #ffffff;
+  border-color: #6366F1;
+}
+
+[data-theme="dark"] .prompt-textarea,
+[data-theme="dark"] .option-select {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .playground-preview-col {
+  background-color: #162032;
+}
+
+[data-theme="dark"] .device-switcher {
+  background-color: #0F172A;
+}
+
+[data-theme="dark"] .device-switch-btn {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .device-switch-btn.active {
+  background-color: #1E293B;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .html-puzzle-box,
+[data-theme="dark"] .puzzle-slots-container,
+[data-theme="dark"] .bug-option-label,
+[data-theme="dark"] .prompt-compare-card,
+[data-theme="dark"] .badge-item-card {
+  background-color: #162032;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .puzzle-tag-chip {
+  background-color: #0F172A;
+  border-color: #475569;
+  color: #818CF8;
+}
+
+[data-theme="dark"] .puzzle-slot-item {
+  background-color: #1E293B;
+  border-color: #4F46E5;
+}
+
+[data-theme="dark"] .badge-item-card.unlocked {
+  background-color: #1E293B;
+}
+
+[data-theme="dark"] .back-to-top-btn {
+  background-color: #1E293B;
+  border-color: #334155;
+  color: #F472B6;
+}
+
+[data-theme="dark"] .toast-msg {
+  background-color: #1E293B;
+  color: #F8FAFC;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+
+/* تخصيصات المكونات الإضافية والشات بوت في الوضع الداكن */
+[data-theme="dark"] .top-bar {
+  background-color: #0A0F1D;
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .martyr-section {
+  background: linear-gradient(135deg, rgba(139, 30, 63, 0.15), rgba(15, 23, 42, 0.6));
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .martyr-card,
+[data-theme="dark"] .staff-card,
+[data-theme="dark"] .subject-card {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .staff-avatar-circle {
+  background-color: #0F172A;
+  border-color: #475569;
+}
+
+[data-theme="dark"] .subject-card-header {
+  border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .chat-modal {
+  background-color: #1E293B;
+  border-color: #334155;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .chat-body {
+  background-color: #0F172A;
+}
+
+[data-theme="dark"] .chat-msg-bot .msg-bubble {
+  background-color: #1E293B;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .chat-code {
+  background: rgba(255, 255, 255, 0.1);
+  color: #F472B6;
+}
+
+[data-theme="dark"] .chat-chips-container,
+[data-theme="dark"] .chat-input-bar {
+  background-color: #1E293B;
+  border-top-color: #334155;
+}
+
+[data-theme="dark"] .chat-chip {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #F472B6;
+}
+
+[data-theme="dark"] .chat-chip:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .chat-input {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .typing-indicator {
+  background-color: #1E293B;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .martyr-code-pill {
+  background: rgba(244, 114, 182, 0.15);
+  color: #F472B6;
+  border-color: rgba(244, 114, 182, 0.35);
+}
+
+[data-theme="dark"] .chat-stop-btn {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #F87171;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+[data-theme="dark"] .chat-stop-btn:hover {
+  background-color: #EF4444;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .chat-copy-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #CBD5E1;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .chat-copy-btn:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .chat-copy-btn.copied {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border-color: #059669;
+}
